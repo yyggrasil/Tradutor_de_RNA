@@ -1,10 +1,7 @@
 from operator import truediv
 from random import randint
 
-
-
 # VARIAVEIS GLOBAIS
-
 
 TAM = 1000
 TAM = (TAM//3)*3 # numero certo de nucleotideos para conversão
@@ -35,6 +32,7 @@ aminoacido = {
     'Stop': ['UGA', 'UAG', 'UAA']
 }
 
+
 # FUNÇÕES A SEREM USADOS NO MAIN
 
 #create DNA file
@@ -57,7 +55,7 @@ def info():
 
     
 #call function to erase DNA
-def erase():
+def limpar_arquivos():
     
     open("txt/RNA.txt", "w").write("")
     open("txt/info_RNA.txt", "w").write("")    
@@ -65,8 +63,8 @@ def erase():
 def traduzir():
     RNA = open('txt/RNA.txt', 'r')
     RNA = RNA.read()
-    INFO = open('txt/info_RNA.txt', 'a')
-    INFO.write("\n\n                           Proteinas:  \n")
+    INFO = open('txt/proteinas.txt', 'a')
+    INFO.write("\n PROTEINAS:  \n\n\n")
     
     Proteina = ''
     for n in range(3, len(RNA), 3):
@@ -74,7 +72,7 @@ def traduzir():
         # pega uma secção de 3 nucleotideos
         Código_Genético = RNA[n-3:n]
 
-        for amina, codigo in dados.aminoacido.items():
+        for amina, codigo in aminoacido.items():
             if Código_Genético in codigo:
                 
                 if amina == 'Stop':
