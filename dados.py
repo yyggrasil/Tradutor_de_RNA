@@ -1,5 +1,5 @@
-LENGHT = 1000
-LENGHT = (LENGHT//3)*3 # numero certo de nucleotideos para conversão
+TAM = 1000
+TAM = (TAM//3)*3 # numero certo de nucleotideos para conversão
 
 nucleotides = ["G", "C", "A", "U"]
 
